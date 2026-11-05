@@ -1,0 +1,56 @@
+{
+  "status": "skipped",
+  "checks": [
+    {
+      "gate": "lint",
+      "status": "skipped",
+      "exitCode": null,
+      "durationMs": 0,
+      "summary": "未找到脚本或命令，已跳过",
+      "errors": [],
+      "command": "",
+      "dir": ".",
+      "package": null,
+      "targeted": false
+    },
+    {
+      "gate": "type",
+      "status": "skipped",
+      "exitCode": null,
+      "durationMs": 0,
+      "summary": "未找到脚本或命令，已跳过",
+      "errors": [],
+      "command": "",
+      "dir": ".",
+      "package": null,
+      "targeted": false
+    },
+    {
+      "gate": "test",
+      "status": "skipped",
+      "exitCode": null,
+      "durationMs": 0,
+      "summary": "未找到脚本或命令，已跳过",
+      "errors": [],
+      "command": "",
+      "dir": ".",
+      "package": null,
+      "targeted": false
+    }
+  ],
+  "ranAt": "2026-11-05T14:04:52.515Z",
+  "cwd": "D:\\desktop\\GitHub发布\\213123131\\sec-knowledge\\gm7\\assets\\js",
+  "scope": {
+    "mode": "all",
+    "reason": "no-changes:git-unavailable",
+    "source": "none",
+    "totalFiles": 0,
+    "files": [],
+    "packages": [],
+    "monorepo": {
+      "isMonorepo": false,
+      "tool": "",
+      "packageCount": 0
+    }
+  }
+}

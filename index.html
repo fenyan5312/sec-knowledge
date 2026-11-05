@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="dark light">
+<title>网安知识库 · 公开镜像</title>
+<meta name="description" content="网络安全体系化学习资料镜像：wintrysec 技能笔记与 d4m1ts 知识库，内容版权归原作者所有。">
+<style>
+  :root{
+    --bg:#0b1020; --bg-2:#111834; --card:#141c38; --line:rgba(148,163,184,.16);
+    --text:#e6ecf8; --muted:#93a2c4; --accent:#5eead4; --accent-2:#fbbf24;
+    --shadow:0 20px 60px rgba(2,6,23,.55);
+  }
+  @media (prefers-color-scheme: light){
+    :root{--bg:#f6f8fc;--bg-2:#eef2fa;--card:#ffffff;--line:rgba(15,23,42,.12);
+      --text:#0f172a;--muted:#55627a;--accent:#0f766e;--accent-2:#b45309;
+      --shadow:0 20px 50px rgba(15,23,42,.08);}
+  }
+  *{box-sizing:border-box}
+  html,body{margin:0;height:100%}
+  body{
+    background:
+      radial-gradient(1200px 600px at 15% -10%, rgba(94,234,212,.12), transparent 60%),
+      radial-gradient(900px 500px at 90% 10%, rgba(251,191,36,.08), transparent 55%),
+      var(--bg);
+    color:var(--text);
+    font:16px/1.65 ui-sans-serif,system-ui,-apple-system,"Segoe UI","PingFang SC","Hiragino Sans GB","Microsoft YaHei",sans-serif;
+    min-height:100%;
+    display:flex;flex-direction:column;
+  }
+  a{color:inherit;text-decoration:none}
+  .wrap{width:min(1080px,92vw);margin:0 auto}
+  header{padding:64px 0 28px}
+  .eyebrow{display:inline-flex;align-items:center;gap:8px;font-size:13px;letter-spacing:.14em;
+    text-transform:uppercase;color:var(--muted)}
+  .eyebrow::before{content:"";width:22px;height:2px;background:var(--accent);border-radius:2px}
+  h1{font-size:clamp(34px,5.2vw,56px);line-height:1.12;margin:18px 0 14px;letter-spacing:-.02em}
+  h1 em{font-style:normal;color:var(--accent)}
+  .lede{max-width:64ch;color:var(--muted);font-size:clamp(15px,1.6vw,18px);margin:0}
+  main{flex:1;padding:10px 0 56px}
+  .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:22px;margin-top:38px}
+  .card{
+    position:relative;display:flex;flex-direction:column;gap:14px;padding:26px;
+    background:linear-gradient(180deg,var(--card),transparent 160%);
+    border:1px solid var(--line);border-radius:18px;box-shadow:var(--shadow);
+    transition:transform .28s cubic-bezier(.22,1,.36,1),border-color .28s,box-shadow .28s;
+    overflow:hidden;
+  }
+  .card::after{
+    content:"";position:absolute;inset:0;border-radius:inherit;pointer-events:none;
+    background:radial-gradient(420px 200px at var(--mx,50%) var(--my,0%),rgba(94,234,212,.10),transparent 60%);
+    opacity:0;transition:opacity .3s;
+  }
+  .card:hover{transform:translateY(-4px);border-color:rgba(94,234,212,.45);
+    box-shadow:0 26px 70px rgba(2,6,23,.6)}
+  .card:hover::after{opacity:1}
+  .tag{font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--accent)}
+  .card h2{margin:0;font-size:26px;letter-spacing:-.01em}
+  .card p{margin:0;color:var(--muted);font-size:15px}
+  .meta{display:flex;flex-wrap:wrap;gap:8px;margin-top:2px}
+  .chip{font-size:12.5px;color:var(--muted);border:1px solid var(--line);
+    border-radius:999px;padding:3px 10px}
+  .go{
+    margin-top:auto;display:inline-flex;align-items:center;gap:10px;align-self:flex-start;
+    padding:10px 16px;border-radius:12px;font-weight:600;
+    background:rgba(94,234,212,.12);color:var(--accent);
+    border:1px solid rgba(94,234,212,.35);
+    transition:gap .25s,background .25s;
+  }
+  .card:hover .go{gap:14px;background:rgba(94,234,212,.18)}
+  .note{
+    margin-top:34px;padding:18px 20px;border-radius:14px;border:1px dashed var(--line);
+    color:var(--muted);font-size:13.5px;background:var(--bg-2);
+  }
+  .note strong{color:var(--text)}
+  footer{border-top:1px solid var(--line);padding:22px 0 34px;color:var(--muted);font-size:13px}
+  footer .row{display:flex;flex-wrap:wrap;gap:10px 22px;justify-content:space-between}
+  footer a{border-bottom:1px solid transparent;transition:border-color .2s,color .2s}
+  footer a:hover{color:var(--accent);border-color:var(--accent)}
+  @media (prefers-reduced-motion: reduce){
+    .card,.go{transition:none}
+    .card:hover{transform:none}
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <span class="eyebrow">Security Knowledge Base</span>
+    <h1>网安知识库<br><em>体系化学习</em>资料镜像</h1>
+    <p class="lede">把两份长期更新的网络安全笔记完整搬到这里，保留原站的前端体验与检索方式，方便离线浏览与系统化学习。内容版权归原作者所有。</p>
+  </header>
+
+  <main>
+    <section class="grid" aria-label="资料库入口">
+      <article class="card" data-motion>
+        <span class="tag">Web · 域渗透 · 攻防</span>
+        <h2>wintrysec 技能笔记</h2>
+        <p>覆盖 Web 安全、域渗透、Linux、安全开发、工具与攻防对抗的体系化技能清单，按主题成册，适合按图索骥。</p>
+        <div class="meta">
+          <span class="chip">Web 安全</span>
+          <span class="chip">域渗透</span>
+          <span class="chip">攻防对抗</span>
+          <span class="chip">安全开发</span>
+        </div>
+        <a class="go" href="./wintrysec/">进入资料库 <span aria-hidden="true">→</span></a>
+      </article>
+
+      <article class="card" data-motion>
+        <span class="tag">Docs · 渗透 · 代码审计</span>
+        <h2>d4m1ts 知识库</h2>
+        <p>按知识库方式整理的信息安全技能与经验总结：渗透测试、代码审计、编程开发、移动安全、应急响应与 AI 安全。</p>
+        <div class="meta">
+          <span class="chip">渗透测试</span>
+          <span class="chip">代码审计</span>
+          <span class="chip">移动安全</span>
+          <span class="chip">应急响应</span>
+        </div>
+        <a class="go" href="./gm7/">进入知识库 <span aria-hidden="true">→</span></a>
+      </article>
+    </section>
+
+    <div class="note">
+      <strong>来源与版权声明：</strong>本页两份资料分别镜像自
+      <a href="https://wintrysec.github.io/" target="_blank" rel="noopener">wintrysec.github.io</a>（MIT License，
+      Copyright © 2019-2026 wintrysec）与
+      <a href="https://blog.gm7.org/" target="_blank" rel="noopener">blog.gm7.org</a>（作者 d4m1ts）。
+      镜像仅用于学习与检索，未对原文观点作改动；原作者保留全部权利。若原作者不希望被镜像，请通过来源页联系方式告知，将立即下线。
+    </div>
+  </main>
+
+  <footer>
+    <div class="row">
+      <span>© 2026 网安知识库镜像站 · 非官方存档</span>
+      <span>
+        来源：<a href="https://wintrysec.github.io/" target="_blank" rel="noopener">wintrysec</a>
+        · <a href="https://blog.gm7.org/" target="_blank" rel="noopener">d4m1ts</a>
+        · <a href="./notice.html">版权说明</a>
+      </span>
+    </div>
+  </footer>
+</div>
+
+<script>
+  // Pointer-follow highlight, transform/opacity only, disabled for reduced motion.
+  const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if (!reduce){
+    for (const card of document.querySelectorAll('[data-motion]')){
+      card.addEventListener('pointermove', (e) => {
+        const r = card.getBoundingClientRect();
+        card.style.setProperty('--mx', (e.clientX - r.left) + 'px');
+        card.style.setProperty('--my', (e.clientY - r.top) + 'px');
+      });
+    }
+  }
+</script>
+</body>
+</html>
