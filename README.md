@@ -2,6 +2,8 @@
 
 网络安全体系化学习资料的静态镜像站，保留原站的前端体验（主题、搜索、侧边栏与文档内跳转）。
 
+**在线预览：<https://fenyan5312.github.io/sec-knowledge/>** · [GitHub 仓库](https://github.com/fenyan5312/sec-knowledge) · [Gitee 仓库](https://gitee.com/G-9nyun/sec-knowledge)
+
 ## 目录
 
 | 路径 | 内容 | 来源 |
