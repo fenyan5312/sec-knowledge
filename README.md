@@ -10,6 +10,12 @@
 | `/wintrysec/` | wintrysec 技能笔记：Web 安全、域渗透、Linux、安全开发、攻防对抗、工具 | https://wintrysec.github.io/ |
 | `/gm7/` | d4m1ts 知识库：渗透测试、代码审计、编程开发、移动安全、应急响应、AI（已排除 Introduction 与更新日志） | https://blog.gm7.org/ |
 
+## 仓库
+
+- GitHub: https://github.com/fenyan5312/sec-knowledge
+- Gitee: https://gitee.com/G-9nyun/sec-knowledge
+- 在线站点（GitHub Pages）: https://fenyan5312.github.io/sec-knowledge/
+
 ## 本地预览
 
 静态站，无构建步骤：
